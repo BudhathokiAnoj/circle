@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+}
+.main{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: rgba(225,225,225,0.05);
+    border: 6px solid transparent;
+    transform-origin: bottom center;
+    animation: animate 3s linear infinite;
+}
+.main::before{
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 100px;
+    border: 10px solid #444;
+    left: 28%;
+    top: -10px;
+    border-radius: 50%;
+    box-shadow: 0 10px #111;
+}
+.main::after{
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 100px;
+    left: 33%;
+    border-radius: 50%;
+    background: #111;
+    top: 60px;
+}
+.class{
+    position: absolute;
+    height: 150px;
+    width: 98%;
+    top: 47%;
+    left: 4px;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    background-color: #FF69B4;
+    filter: drop-shadow(0 0 100px #FF69B4);
+    transform-origin: top center;
+    animation: animates 3s linear infinite;
+}
+@keyframes animates {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-20deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+        transform: rotate(0deg);
+    }
+}
+.class::before{
+    content: '';
+    position: absolute;
+    height: 17px;
+    width: 100%;
+    background-color: #FF1493;
+    border-radius: 50%;
+    top: -10px;
+}
